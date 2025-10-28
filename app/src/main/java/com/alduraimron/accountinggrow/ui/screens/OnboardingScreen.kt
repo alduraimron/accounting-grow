@@ -1,5 +1,7 @@
 package com.alduraimron.accountinggrow.ui.screens
 
+import androidx.compose.foundation.Image
+import com.alduraimron.accountinggrow.R
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -40,17 +43,15 @@ fun OnboardingScreen(navController: NavHostController) {
             Box(modifier = Modifier.weight(1f))
 
             // Icon placeholder
-            Box(
+            Image(
+                painter = painterResource(id = R.drawable.app_logo),
+                contentDescription = "Logo Aplikasi",
                 modifier = Modifier
                     .size(120.dp)
-                    .background(Color(0xFFE3F2FD), shape = androidx.compose.foundation.shape.RoundedCornerShape(16.dp)),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    text = "📊",
-                    fontSize = 60.sp
-                )
-            }
+                    .align(Alignment.CenterHorizontally)
+                    .padding(top = 48.dp)
+            )
+
 
             Text(
                 text = "SELAMAT DATANG",
